@@ -1,0 +1,12 @@
+Laptop Dataset — Description
+
+This dataset contains laptop specifications and pricing information from different manufacturers.
+Each record represents a laptop and includes details such as company, product name, laptop type, screen size, screen resolution, 
+CPU, RAM, storage, GPU, operating system, weight, and price in euros.
+
+The dataset is useful for SQL data cleaning and exploratory analysis. 
+The cleaning process can focus on standardizing inconsistent values such as operating-system names, RAM and storage formats,
+removing unnecessary units from numerical columns, and handling inconsistent product or specification entries.
+
+After cleaning, the dataset can be used to analyze laptop prices based on brand, specifications, performance, storage, RAM, screen size,
+and other hardware characteristics.
