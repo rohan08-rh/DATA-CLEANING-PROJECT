@@ -284,3 +284,23 @@ ADD COLUMN cpu_speed VARCHAR(255) AFTER cpu_brand;
 
 UPDATE laptops1
 SET cpu_speed=SUBSTRING_INDEX(Cpu,' ',-1);
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+-- Analyze the distribution of laptops across different price ranges
+-- using a star (*) representation for the number of laptops in each range.
+-- Dataset price range: Minimum = 174 euros, Maximum = 6099 euros.
+
+SELECT laptops1.buckets AS buckets,REPEAT('*',COUNT(*)/5) FROM data3.laptops1
+WHERE CASE
+WHEN Price_euros  BETWEEN 174 AND 500 THEN '1'
+WHEN Price_euros  BETWEEN 500 AND 1000 THEN '2'
+WHEN Price_euros  BETWEEN 1000 AND 2000 THEN '3'
+WHEN Price_euros BETWEEN 3000 AND 4000 THEN '4'
+WHEN Price_euros BETWEEN 5000 AND 6000 THEN '5'
+ELSE '>6000'
+END
+GROUP BY buckets;
+
+-- MAX 6099,MIN 174
